@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 /**
  * Created by Guy Hoffman
@@ -31,7 +32,7 @@ public class OSCPlayer {
         Object[] args = new Object[2];
         args[0] = note;
         args[1] = 80;
-        OSCMessage msg = new OSCMessage("", args);
+        OSCMessage msg = new OSCMessage("", Arrays.asList(args));
         try {
             sender.send(msg);
         } catch (IOException e) {

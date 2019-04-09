@@ -64,7 +64,7 @@ public class MacOSSpecificResourceLocator implements ResourceLocator.OSSpecificR
 
 	//search these paths for default-defaults if no PATH_TO_DEFAULT_DEFAULTS is set.
 	public static final String RELATIVE_PATH_TO_DEFAULT_DEFAULTS = "./defaults.txt";
-	public static final String ABSOLUTE_PATH_TO_DEFAULT_DEFAULTS = "/Users/violinsimma/Documents/Georgia_Tech/GTRM_Lab/Shimon/Shimon_Head/src/ShimonHeadController/defaults.txt";
+	public static final String ABSOLUTE_PATH_TO_DEFAULT_DEFAULTS = "~/IdeaProjects/ShimonHeadController/src/ShimonHeadController/defaults.txt";
 
 //	public static boolean LOOK_IN_MAIN_BUNDLE_FIRST= true;
 

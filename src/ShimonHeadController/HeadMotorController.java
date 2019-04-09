@@ -25,8 +25,7 @@ public class HeadMotorController {
 
     public HeadMotorController() {
 
-        asciiController = new CopleyASCIIController("/dev/tty.usbserial-FTCWOTG8");
-//        robotisController = new RobotisSerialController("/dev/tty.usbserial-A2001mr2");
+        asciiController = new CopleyASCIIController("ttyUSB2");
 
     }
 

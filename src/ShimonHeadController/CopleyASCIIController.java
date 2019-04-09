@@ -87,9 +87,15 @@ public class CopleyASCIIController {
     public CopleyASCIIController(String comPortName) {
 
         comPortInitialized = false;
-        port = SerialPort.getCommPort(comPortName);
-        port.setBaudRate(9600);
+//        port = SerialPort.getCommPort(comPortName);
         try {
+            for (SerialPort s: SerialPort.getCommPorts()) {
+
+                if (s.getSystemPortName().equals(comPortName)) {
+                    port = s;
+                    port.setBaudRate(9600);
+                }
+            }
 //            port = new PSerial(comPortName, 9600);
             port.openPort();
             for (SerialPort s : SerialPort.getCommPorts()) {

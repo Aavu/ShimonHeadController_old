@@ -34,7 +34,7 @@ public abstract class OSCReceiver {
             OSCListener listener = new OSCListener() {
                 public void acceptMessage(java.util.Date time, OSCMessage message) {
 
-                    handleMessage(message.getArguments());
+                    handleMessage(message.getArguments().toArray());
                 }
             };
             receiver.addListener(address, listener);

@@ -1,0 +1,49 @@
+# Motor config file for Shimon Head
+-
+   axis: 0
+   name: basePan
+   type: HD         # HD / Robotis
+   homing: hardstop # hardstop / manual
+   zero: 208000      # logical zero encoder ticks - logical 0
+   min: -200000      # encoder ticks
+   max: 408000       # encoder ticks
+   scale: 159155     # encoder ticks per radian
+-
+   axis: 1
+   name: neckTilt
+   type: HD         # HD / Robotis
+   homing: hardstop   # hardstop / manual
+   zero: 95000     # logical zero encoder ticks - logical 0
+   min: -90000      # encoder ticks
+   max: 240000       # encoder ticks
+   scale: 159155     # encoder ticks per radian
+-
+   axis: 2
+   name: neckPan
+   type: HD         # HD / Robotis
+   homing: manual   # hardstop / manual
+   zero: 0     # logical zero encoder ticks - logical 0
+   scale: 63662     # encoder ticks per radian
+-
+   axis: 3
+   name: headTilt
+   type: HD         # HD / Robotis
+   homing: manual   # hardstop / manual
+   zero: 0     # logical zero encoder ticks - logical 0
+   scale: 63662     # encoder ticks per radian
+-
+   axis: 1
+   name: upperLid
+   type: Robotis         # HD / Robotis
+   zero: 340     # logical zero encoder ticks - logical 0
+   min: 340      # ticks
+   max: 670       # ticks
+   scale: 196     # ticks per radian
+-
+   axis: 2
+   name: lowerLid
+   type: Robotis         # HD / Robotis
+   zero: 670     # logical zero encoder ticks - logical 0
+   min: 670      # ticks
+   max: 990       # ticks
+   scale: 196     # ticks per radian

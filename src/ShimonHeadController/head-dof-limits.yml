@@ -1,0 +1,41 @@
+# DOF config file for head - all values are in radians
+-
+   name: basePan
+   min: -1.25
+   max: 1.25
+   default: 0.0
+   maxVel: 5.0
+   maxAcc: 0.3
+-
+   name: neckTilt
+   min: -0.5      
+   max: 0.9 
+   default: 0.0 
+   maxVel: 15.0
+   maxAcc: .45
+-
+   name: neckPan
+   min: -1.1
+   max: 1.1 
+   default: 0.0
+   maxVel: 25.0
+   maxAcc: 4.3
+-
+   name: headTilt
+   default: 0.0
+   maxVel: 20.0
+   maxAcc: 1.6
+-
+   name: upperLid
+   min: 0.0
+   max: 3.25  
+   default: 0.4   
+   maxVel: 5.5
+   maxAcc: 1.1
+-
+   name: lowerLid
+   min: 0.0      
+   max: 3.25  
+   default: 0.4
+   maxVel: 5.5   
+   maxAcc: 1.1

@@ -27,10 +27,10 @@ public class ShimonOSCHeadController implements iLaunchable {
 
     private HeadMotorController hmc;
 
-    private final static String ARM_POS_OSC_ADDR = "/arm-positions";
-    private final static int    ARM_POS_OSC_PORT =  30308;
-    private final static String STRIKE_OSC_ADDR = "/mallet-strikes";
-    private final static int    STRIKE_OSC_PORT =  30309;
+//    private final static String ARM_POS_OSC_ADDR = "/arm-positions";
+//    private final static int    ARM_POS_OSC_PORT =  30308;
+//    private final static String STRIKE_OSC_ADDR = "/mallet-strikes";
+//    private final static int    STRIKE_OSC_PORT =  30309;
     private final static String HEAD_CMD_OSC_ADDR = "/head-commands";
     private final static int    HEAD_CMD_OSC_PORT =  30310;
 
@@ -65,46 +65,44 @@ public class ShimonOSCHeadController implements iLaunchable {
         
         dm.goTo("neckTilt", -.7f, 5f);
         dm.goTo("basePan", -1.f, 20f);
-      
-//      listenBehavior.setBasePan(-.9f);
-
-      
+//        listenBehavior.setBasePan(-.9f);
+//
         dm.goTo("neckPan", 0.f, 15f);
         dm.goTo("headTilt", -.5f, 10f);
         dm.goTo("basePan", -0.9f);
         dm.goTo("neckTilt", 0.f, 10f);
+//
+//
+//        listenBehavior.start();
 
-      
-        listenBehavior.start();
+//        new OSCReceiver(ARM_POS_OSC_ADDR, ARM_POS_OSC_PORT) {
+//            @Override
+//            protected void handleMessage(Object[] args) {
+//
+//                if (!going)
+//                    return;
+//
+//                int[] arms = new int[4];
+//                for (int i = 0; i < arms.length; i++) {
+//                    arms[i] = (Integer) args[i];
+//                    System.out.println("arm "+i+" at position "+args[i]);
+//                }
+//
+//                clusterer.updateArmPositions(arms);
+//
+//            }
+//        };
 
-        new OSCReceiver(ARM_POS_OSC_ADDR, ARM_POS_OSC_PORT) {
-            @Override
-            protected void handleMessage(Object[] args) {
-
-                if (!going)
-                    return;
-
-                int[] arms = new int[4];
-                for (int i = 0; i < arms.length; i++) {
-                    arms[i] = (Integer) args[i];
-                    System.out.println("arm "+i+" at position "+args[i]);
-                }
-
-                clusterer.updateArmPositions(arms);
-
-            }
-        };
-
-        new OSCReceiver(STRIKE_OSC_ADDR, STRIKE_OSC_PORT) {
-            @Override
-            protected void handleMessage(Object[] args) {
-
-                if (!going)
-                     return;
-
-                clusterer.hit((Integer) args[0] - 1);
-            }
-        };
+//        new OSCReceiver(STRIKE_OSC_ADDR, STRIKE_OSC_PORT) {
+//            @Override
+//            protected void handleMessage(Object[] args) {
+//
+//                if (!going)
+//                     return;
+//
+//                clusterer.hit((Integer) args[0] - 1);
+//            }
+//        };
 
         new OSCReceiver(HEAD_CMD_OSC_ADDR, HEAD_CMD_OSC_PORT) {
             @Override

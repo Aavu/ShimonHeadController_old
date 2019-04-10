@@ -31,11 +31,9 @@ public abstract class OSCReceiver {
         try {
 
             receiver = new OSCPortIn(port);
-            OSCListener listener = new OSCListener() {
-                public void acceptMessage(java.util.Date time, OSCMessage message) {
-
-                    handleMessage(message.getArguments().toArray());
-                }
+            OSCListener listener = (time, message) -> {
+                System.out.println("message received");
+//                    handleMessage(message.getArguments().toArray());
             };
             receiver.addListener(address, listener);
             receiver.startListening();

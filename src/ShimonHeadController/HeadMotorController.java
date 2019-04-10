@@ -34,6 +34,7 @@ public class HeadMotorController {
         try {
             Yaml yaml = new Yaml();
             String configFile = ResourceLocator.getPathForResource("head-motor-config.yml");
+            System.out.println(configFile);
             List<Map<String, Object>> motorsConfigs = yaml.load(new FileInputStream(new File(configFile)));
 
             for (Map<String, Object> mc : motorsConfigs) {
@@ -49,8 +50,11 @@ public class HeadMotorController {
     public void home()
     {
         for (HeadMotor m : motors.values()) {
+            System.out.println(m.name + " " + m.axis);
             m.home();
+            System.out.println("here");
         }
+
         boolean done = false;
         while (!done) {
             done = true;
@@ -58,7 +62,7 @@ public class HeadMotorController {
                 if (!m.isHomed())
                     done = false;
             }
-            try {Thread.sleep(50);} catch (InterruptedException ignored) {};
+            try {Thread.sleep(50);} catch (InterruptedException ignored) {}
         }
 
         zero();
@@ -68,7 +72,7 @@ public class HeadMotorController {
     public void zero() {
         for (HeadMotor m : motors.values()) {
             m.zero();
-            try {Thread.sleep(50);} catch (InterruptedException ignored) {};
+            try {Thread.sleep(100);} catch (InterruptedException ignored) {};
         }
     }
 

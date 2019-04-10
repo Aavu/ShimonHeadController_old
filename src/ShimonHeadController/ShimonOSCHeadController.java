@@ -75,48 +75,15 @@ public class ShimonOSCHeadController implements iLaunchable {
 //
 //        listenBehavior.start();
 
-//        new OSCReceiver(ARM_POS_OSC_ADDR, ARM_POS_OSC_PORT) {
-//            @Override
-//            protected void handleMessage(Object[] args) {
-//
-//                if (!going)
-//                    return;
-//
-//                int[] arms = new int[4];
-//                for (int i = 0; i < arms.length; i++) {
-//                    arms[i] = (Integer) args[i];
-//                    System.out.println("arm "+i+" at position "+args[i]);
-//                }
-//
-//                clusterer.updateArmPositions(arms);
-//
-//            }
-//        };
-
-//        new OSCReceiver(STRIKE_OSC_ADDR, STRIKE_OSC_PORT) {
-//            @Override
-//            protected void handleMessage(Object[] args) {
-//
-//                if (!going)
-//                     return;
-//
-//                clusterer.hit((Integer) args[0] - 1);
-//            }
-//        };
-
         new OSCReceiver(HEAD_CMD_OSC_ADDR, HEAD_CMD_OSC_PORT) {
             @Override
             protected void handleMessage(Object[] args) {
-
-
 
                 if (!going)
                      return;
 
                 if (args.length < 1)
                     return;
-
-
 
                 // System.out.println(ANSIColorUtils.red("Command  " + args[0]));
                 String cmd = (String) args[0];

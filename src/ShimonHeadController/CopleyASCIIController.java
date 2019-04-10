@@ -303,7 +303,6 @@ public class CopleyASCIIController {
         set(axis, 0xc6, 1000);  // Sets the home offset to 1000 counts.
         set(axis, 0x24, 21);    // Enables the amplifier in programmed position mode.
         trajectory(axis, 2);    // Starts the homing sequence.
-
     }
 
 

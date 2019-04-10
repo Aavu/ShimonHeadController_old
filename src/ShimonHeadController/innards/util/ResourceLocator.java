@@ -83,27 +83,27 @@ public class ResourceLocator
 				System.out.println("ResourceLocator has determined we're on Mac OS X");
 				className= "ShimonHeadController.innards.util.MacOSSpecificResourceLocator";
 			}
-			//            else if("WindowsBLAH".equals(osName)){
-			//                System.out.println("we are on windows!");
-			//                className = "blah";
-			//            } //....  etc.
-			else if("Windows XP".equals(osName)) {
-				System.out.println("ResourceLocator has determined we're on Windows XP");
-				className= "ShimonHeadController.innards.util.WinXPSpecificResourceLocator";
-			}
-			else if("Windows Vista".equals(osName)) {
-				System.out.println("ResourceLocator has determined we're on Windows Vista");
-				className= "ShimonHeadController.innards.util.WinVistaSpecificResourceLocator";
-			}
-			else if("Windows 7".equals(osName)) {
-				System.out.println("ResourceLocator has determined we're on Windows 7");
-				className= "ShimonHeadController.innards.util.WinVistaSpecificResourceLocator";//same as vista
-			}
-			else if("Windows 8".equals(osName)) {
-				System.out.println("ResourceLocator has determined we're on Windows 8");
-				System.out.println("However, we do not know what to do about it yet. We'll just try what works on Windows Vista and 7.");
-				className= "ShimonHeadController.innards.util.WinVistaSpecificResourceLocator";//same as vista
-			}
+//			//            else if("WindowsBLAH".equals(osName)){
+//			//                System.out.println("we are on windows!");
+//			//                className = "blah";
+//			//            } //....  etc.
+//			else if("Windows XP".equals(osName)) {
+//				System.out.println("ResourceLocator has determined we're on Windows XP");
+//				className= "ShimonHeadController.innards.util.WinXPSpecificResourceLocator";
+//			}
+//			else if("Windows Vista".equals(osName)) {
+//				System.out.println("ResourceLocator has determined we're on Windows Vista");
+//				className= "ShimonHeadController.innards.util.WinVistaSpecificResourceLocator";
+//			}
+//			else if("Windows 7".equals(osName)) {
+//				System.out.println("ResourceLocator has determined we're on Windows 7");
+//				className= "ShimonHeadController.innards.util.WinVistaSpecificResourceLocator";//same as vista
+//			}
+//			else if("Windows 8".equals(osName)) {
+//				System.out.println("ResourceLocator has determined we're on Windows 8");
+//				System.out.println("However, we do not know what to do about it yet. We'll just try what works on Windows Vista and 7.");
+//				className= "ShimonHeadController.innards.util.WinVistaSpecificResourceLocator";//same as vista
+//			}
 			else if ("Linux".equals(osName)) {
 				System.out.println("ResourceLocator has determined we're on Linux");
 				className= "ShimonHeadController.innards.util.LinuxSpecificResourceLocator";

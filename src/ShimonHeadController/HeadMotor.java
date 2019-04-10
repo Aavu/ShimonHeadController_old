@@ -19,7 +19,8 @@ public abstract class HeadMotor extends NamedObject {
     }
 
     public void init(Map<String, Object> mc) {
-        setName((String) mc.get("name"));
+//        setName((String) mc.get("name"));
+        name = (String) mc.get("name");
         axis = (Integer) mc.get("axis");
     }
     public abstract void home();
